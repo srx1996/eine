@@ -15,19 +15,19 @@
         .btn {
             color: white;
             min-width: 200px;
-            margin: 10px;
+            margin: 50px 0;
         }
 
-        h1 {
-            color: fuchsia;
-            font-weight: 1000;
-            margin-bottom: 20px;
-        }
+        /*h1 {*/
+        /*    color: fuchsia;*/
+        /*    font-weight: 1000;*/
+        /*    margin-bottom: 20px;*/
+        /*}*/
     </style>
 </head>
 <body>
 <div class="container" style="text-align: center;border:1px solid aqua">
-    <h1>欢迎来到艾因小站</h1>
+    <!--    <h1>欢迎来到艾因小站</h1>-->
     <div class="row">
         <div class="col-md-3">
             <button url-type="live" type="button" class="btn btn-lg btn-live" style="background-color:#FB7299">艾因的直播间
@@ -49,20 +49,60 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <p id="live-info"></p>
+        </div>
+    </div>
+
 </div>
 
 <script>
+    //默认获取艾因直播间信息,时间间隔为60-120s
+    var globalRoomId = 21403601
     $(function () {
+        getLiveInfo(globalRoomId)
+        btnClick()
+        setTime()
+    })
 
+    //设置定时器 每60秒获取直播间信息
+    function setTime() {
+        let time
+        try {
+            time = setInterval(function () {
+                getLiveInfo(globalRoomId)
+            }, 60000);
+        } catch (e) {
+            console.log(e)
+            clearInterval(time);
+        }
+    }
+
+    //绑定按钮点击事件 跳转链接
+    function btnClick() {
         $(".btn").each(function (i, e) {
             $(e).click(function () {
                 $.get("/go/" + $(this).attr("url-type"), function (data, status) {
-                    window.location.href = data
+                    if (data.code !== 0) {
+                        alert(data.msg)
+                        return
+                    }
+                    window.location.href = data.eineUrl.linkUrl
                 })
             })
         })
+    }
 
-    });
+    //获取直播间状态
+    function getLiveInfo(roomId) {
+        console.log("获取直播间信息...")
+        $.get("/live-info/" + roomId, function (data, status) {
+            var str = JSON.stringify(data.eineLive);
+            $("#live-info").text(str)
+        })
+    }
+
 </script>
 </body>
 </html>

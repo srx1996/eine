@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="live.eine.fans.mapper.LinkMapper">
+    <select id="getUrlByAll" resultType="live.eine.fans.pojo.EineUrl">
+        select *
+        from eine_url;
+    </select>
+
+    <select id="getUrlByOne" resultType="live.eine.fans.pojo.EineUrl">
+        select *
+        from eine_url
+        where web_uri = #{uri}
+    </select>
+
+    <select id="getUrlByShortUri" resultType="live.eine.fans.pojo.EineUrl">
+        select *
+        from eine_url
+        where short_uri = #{uri};
+    </select>
+</mapper>
