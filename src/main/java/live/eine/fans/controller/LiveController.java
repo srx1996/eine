@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 直播间信息处理器
  */
 @RestController
-@EnableScheduling   // 2.开启定时任务
 public class LiveController {
     @Autowired
     LiveService liveService;

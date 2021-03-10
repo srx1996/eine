@@ -106,6 +106,7 @@
                     <include>**/*.html</include>
                     <include>**/*.xml</include>
                     <include>**/*.tld</include>
+                    <include>/static/**</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

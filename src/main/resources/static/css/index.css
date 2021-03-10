@@ -1,0 +1,103 @@
+body {
+    background-color: #C5E6DF;
+}
+
+.btn {
+    color: white;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+.nav-btn div {
+    padding: 0;
+}
+
+div {
+    border: 1px solid red;
+}
+
+.container {
+    min-width: 1280px;
+    min-height: 800px;
+}
+
+.header {
+    min-height: 200px;
+    background-image: url("https://eine.oss-cn-hangzhou.aliyuncs.com/header.png");
+    background-repeat: no-repeat;
+}
+
+.head-img {
+    border-radius: 50%;
+    border: 10px white solid;
+}
+
+.head-img-active {
+    border: 10px greenyellow solid;
+}
+
+.head-img-off {
+    border: 10px darkgrey solid;
+}
+
+.head-img-playback {
+    border: 10px darkorange solid;
+
+}
+
+#live-info {
+    margin-top: 20px;
+}
+
+.room-title {
+    margin: 20px 0;
+    color: #FB7299;
+}
+
+.live-status-tips {
+    margin-top: 10px;
+}
+
+.live-status-tips div {
+    /*flex: 1;*/
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    vertical-align: middle; /* 居中对齐， */
+}
+
+.live-status-tips div:nth-child(1) {
+    background-color: greenyellow;
+}
+
+.live-status-tips div:nth-child(3) {
+    background-color: darkorange;
+}
+
+.live-status-tips div:nth-child(5) {
+    background-color: darkgrey;
+}
+
+.live-status-tips span {
+    display: inline-block;
+}
+
+.head-img-rotate{
+    animation:rotate 5s linear infinite;
+}
+/*
+  turn : 定义的动画名称
+  1s : 动画时间
+  linear : 动画以何种运行轨迹完成一个周期
+  infinite :规定动画应该无限次播放
+ */
+@keyframes rotate{
+    0%{-webkit-transform:rotate(0deg);}
+    25%{-webkit-transform:rotate(90deg);}
+    50%{-webkit-transform:rotate(180deg);}
+    75%{-webkit-transform:rotate(270deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
