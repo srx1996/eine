@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>艾因小站</title>
+    <link rel="icon" href="https://eine.oss-cn-hangzhou.aliyuncs.com/favicon.ico" type="image/x-icon"/>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
@@ -21,20 +22,32 @@
 
     </div>
     <div class="row nav-btn">
-        <div class="col-md-3">
-            <button url-type="live" type="button" class="btn btn-lg btn-live" style="background-color:#FB7299">艾因的直播间
+        <div class="col-md-2">
+            <button url-type="bilibili" type="button" class="btn btn-lg btn-bilibili" style="background-color:#00A1D6">
+                艾因的B站动态
             </button>
         </div>
-        <div class="col-md-3">
-            <button url-type="pome" type="button" class="btn btn-lg btn-pome" style="background-color: #6B71FF">艾因的提问箱
+        <div class="col-md-2">
+            <button url-type="live" type="button" class="btn btn-lg btn-live" style="background-color:#FB7299">
+                艾因的直播间
             </button>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
+            <button url-type="pome" type="button" class="btn btn-lg btn-pome" style="background-color: #6B71FF">
+                艾因的提问箱
+            </button>
+        </div>
+        <div class="col-md-2">
             <button url-type="weibo" type="button" class="btn btn-lg btn-weibo" style="background-color: #FF8200">
                 艾因的微博
             </button>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
+            <button url-type="moegirl" type="button" class="btn btn-lg btn-moegirl" style="background-color: #228B22">
+                艾因的萌娘百科
+            </button>
+        </div>
+        <div class="col-md-2">
             <button url-type="twitter" type="button" class="btn btn-lg btn-twitter" style="background-color: #1DA1F2">
                 艾因的推特
             </button>
@@ -43,9 +56,9 @@
 
     <div id="live-info" class="row">
         <div class="col-md-3">
-            <div>
+            <div style="margin-top: 20px">
                 <img id="head-img" class="head-img"
-                     src="https://i1.hdslb.com/bfs/face/627b9390be6481d4a88ff1e4808a7d7f8b6b3bbe.jpg@128w_128h_1o.webp"
+                     src="https://eine.oss-cn-hangzhou.aliyuncs.com/touxiang.webp"
                      alt="头像">
             </div>
             <div class="live-status-tips">
@@ -57,10 +70,36 @@
                 <span>闲置</span>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
             <h2 class="room-title">获取直播间标题中...</h2>
-
+            <div class="details-info">
+                <div>
+                    <p id="last-time">
+                        <span>上次直播时间</span>
+                        <span style="display: none">0000-00-00 00:00:00</span>
+                    </p>
+                    <p id="startup-time">
+                        <span>本次开播时间</span>
+                        <span style="display: none">0000-00-00 00:00:00</span>
+                    </p>
+                </div>
+                <div>
+                    <p id="hot-val">
+                        <span>人气值</span>
+                        <span style="display: none">0</span>
+                    </p>
+                    <p id="attention-val">
+                        <span>关注</span>
+                        <span style="display: none">0</span>
+                    </p>
+                </div>
+            </div>
         </div>
+        <div class="col-md-3">gif</div>
+    </div>
+
+    <div class="row">
+        动态
     </div>
 
 </div>

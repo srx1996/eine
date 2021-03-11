@@ -17,4 +17,5 @@ public class EineLive {
     private String parent_area_name; //直播分区
     private String title; //直播标题
     private String live_time; //开播时间
+    private String last_time; //上次直播时间
 }

@@ -1,5 +1,5 @@
 body {
-    background-color: #C5E6DF;
+    background-color: #feeeed;
 }
 
 .btn {
@@ -15,7 +15,7 @@ body {
 }
 
 div {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .container {
@@ -32,6 +32,10 @@ div {
 .head-img {
     border-radius: 50%;
     border: 10px white solid;
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin: 0 auto;
 }
 
 .head-img-active {
@@ -48,16 +52,16 @@ div {
 }
 
 #live-info {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px 0;
+    background-color: #C5E6DF;
 }
 
-.room-title {
-    margin: 20px 0;
-    color: #FB7299;
-}
 
 .live-status-tips {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .live-status-tips div {
@@ -85,19 +89,75 @@ div {
     display: inline-block;
 }
 
-.head-img-rotate{
-    animation:rotate 5s linear infinite;
+.head-img-rotate {
+    animation: rotate 5s linear infinite;
 }
+
+.room-title {
+    color: #8552a1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
 /*
   turn : 定义的动画名称
   1s : 动画时间
   linear : 动画以何种运行轨迹完成一个周期
   infinite :规定动画应该无限次播放
  */
-@keyframes rotate{
-    0%{-webkit-transform:rotate(0deg);}
-    25%{-webkit-transform:rotate(90deg);}
-    50%{-webkit-transform:rotate(180deg);}
-    75%{-webkit-transform:rotate(270deg);}
-    100%{-webkit-transform:rotate(360deg);}
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.details-info {
+    text-align: left;
+    display: flex;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.details-info div {
+    flex: 1;
+}
+
+.details-info p {
+    font-size: 20px;
+    margin: 0;
+    color: white;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle; /* 居中对齐， */
+    line-height: 60px;
+    /*font-family: "Times New Roman", Times, serif;*/
+}
+
+.details-info div:nth-child(1) p:nth-child(1) {
+    background-color: #F06522;
+}
+
+.details-info div:nth-child(1) p:nth-child(2) {
+    background-color: #00ADEF;
+}
+
+.details-info div:nth-child(2) p:nth-child(1) {
+    background-color: #8DC73F;
+}
+
+.details-info div:nth-child(2) p:nth-child(2) {
+    background-color: #FEC20A;
 }

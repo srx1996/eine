@@ -107,6 +107,7 @@
                     <include>**/*.xml</include>
                     <include>**/*.tld</include>
                     <include>/static/**</include>
+                    <include>**/*.ico</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
