@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -24,9 +25,14 @@ public class LinkController {
 
     private static final Map<String, EineUrl> urlMap = new HashMap<>();
 
-    @GetMapping("/favicon.ico")
-    public ModelAndView getIcon() {
-        return new ModelAndView();
+    @GetMapping("/all/url")
+    @ResponseBody
+    public R getAllUrl() {
+        List<EineUrl> urlList = linkService.getUrlByAll();
+        if (urlList.size() == 0 || urlList == null) {
+            R.error("url为空");
+        }
+        return R.ok().put("urlList", urlList);
     }
 
     @GetMapping("/{uri}")

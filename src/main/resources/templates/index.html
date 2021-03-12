@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>艾因小站</title>
-    <link rel="icon" href="https://eine.oss-cn-hangzhou.aliyuncs.com/favicon.ico" type="image/x-icon"/>
+    <!--    <link rel="icon" href="https://eine.oss-cn-hangzhou.aliyuncs.com/favicon.ico" type="image/x-icon"/>-->
+    <link rel="icon" th:href="@{/img/favicon.ico}" type="image/x-icon"/>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
     <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
@@ -22,34 +23,9 @@
 
     </div>
     <div class="row nav-btn">
-        <div class="col-md-2">
-            <button url-type="bilibili" type="button" class="btn btn-lg btn-bilibili" style="background-color:#00A1D6">
-                艾因的B站动态
-            </button>
-        </div>
-        <div class="col-md-2">
-            <button url-type="live" type="button" class="btn btn-lg btn-live" style="background-color:#FB7299">
-                艾因的直播间
-            </button>
-        </div>
-        <div class="col-md-2">
-            <button url-type="pome" type="button" class="btn btn-lg btn-pome" style="background-color: #6B71FF">
-                艾因的提问箱
-            </button>
-        </div>
-        <div class="col-md-2">
-            <button url-type="weibo" type="button" class="btn btn-lg btn-weibo" style="background-color: #FF8200">
-                艾因的微博
-            </button>
-        </div>
-        <div class="col-md-2">
-            <button url-type="moegirl" type="button" class="btn btn-lg btn-moegirl" style="background-color: #228B22">
-                艾因的萌娘百科
-            </button>
-        </div>
-        <div class="col-md-2">
-            <button url-type="twitter" type="button" class="btn btn-lg btn-twitter" style="background-color: #1DA1F2">
-                艾因的推特
+        <div class="btn-loading">
+            <button url-type="bilibili" type="button" class="btn btn-lg" style="background-color:#9D0002">
+                加载中...
             </button>
         </div>
     </div>
@@ -58,7 +34,7 @@
         <div class="col-md-3">
             <div style="margin-top: 20px">
                 <img id="head-img" class="head-img"
-                     src="https://eine.oss-cn-hangzhou.aliyuncs.com/touxiang.webp"
+                     th:src="@{/img/face.webp}"
                      alt="头像">
             </div>
             <div class="live-status-tips">
@@ -95,12 +71,67 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">gif</div>
+        <div class="col-md-3">
+            <div class="tips">
+                <p style="color: white;background-color: #7d5886;border-top-left-radius: 10px;border-top-right-radius: 10px">
+                    短连接
+                </p>
+                <div style="width: 150px;text-align: left;margin: 0 auto">
+                    <p>
+                        [直播间] <span style="font-weight: bold">eine.live/19</span>
+                    </p>
+                    <p>
+                        [B站动态] <span style="font-weight: bold">eine.live/bi</span>
+                    </p>
+                    <p>
+                        [提问箱] <span style="font-weight: bold">eine.live/qa</span>
+                    </p>
+                    <p>
+                        [微博] <span style="font-weight: bold">eine.live/wb</span>
+                    </p>
+                    <p>
+                        [推特] <span style="font-weight: bold">eine.live/tw</span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row">
-        动态
+
+        <div class="col-md-3" style="padding: 0">
+            <div class="live-time">
+                直播时间轴
+            </div>
+        </div>
+
+        <div class="col-md-9" style="padding: 0">
+            <div class="bili-dynamic">
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+                <div class="row">
+                    动态
+                </div>
+            </div>
+        </div>
     </div>
+
 
 </div>
 

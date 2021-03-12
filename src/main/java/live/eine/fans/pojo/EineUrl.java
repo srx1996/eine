@@ -13,5 +13,6 @@ public class EineUrl {
     private String webName;
     private String linkUrl;
     private String shortUri;
-
+    private String description;
+    private String color;
 }

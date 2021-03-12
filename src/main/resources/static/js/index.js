@@ -22,12 +22,28 @@ var user = {
 
 $(function () {
     setTimeout(function () {
+        getUrlList()
         getLiveInfo(globalRoomId)
-        btnClick()
         setTime()
         bindUpdateDetailsInfo(["#last-time", "#startup-time", "#hot-val", "#attention-val"])
-    }, 500)
+    }, 200)
 })
+
+//获取所有url并渲染成按钮
+function getUrlList() {
+    $.get("/all/url", function (data, status) {
+        $.each(data.urlList, function (i, e) {
+            var el = `<div>
+                        <button url-type=${e.webUri} type="button" class="btn btn-lg" style="background-color:${e.color}">
+                            ${e.description}
+                        </button>
+                      </div>`
+            $(".nav-btn").append($(el))
+        })
+        $(".btn-loading").remove()
+        bindBtnClick()
+    })
+}
 
 //设置定时器 每60秒获取直播间信息
 function setTime() {
@@ -43,9 +59,9 @@ function setTime() {
 }
 
 //绑定按钮点击事件 跳转链接
-function btnClick() {
+function bindBtnClick() {
     $(".btn").each(function (i, e) {
-        $(e).click(function () {
+        $(e).on("click", function () {
             $.get("/go/" + $(this).attr("url-type"), function (data, status) {
                 if (data.code !== 0) {
                     alert(data.msg)
@@ -54,6 +70,7 @@ function btnClick() {
                 window.location.href = data.eineUrl.linkUrl
             })
         })
+
     })
 }
 

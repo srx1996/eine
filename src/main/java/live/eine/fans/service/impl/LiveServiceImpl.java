@@ -16,6 +16,9 @@ public class LiveServiceImpl implements LiveService {
     private static EineLive eineLive;
     private static Integer globalRoomId = 21403601;
 
+    /**
+     * 向B站发送获取直播间信息请求
+     */
     public EineLive postLiveInfoBySchedule(Integer roomId) throws Exception {
         String json = PostUtil.post("https://api.live.bilibili.com/room/v1/Room/get_info?id=" + roomId);
         JSONObject jsonObject = JSONObject.parseObject(json);
@@ -25,6 +28,9 @@ public class LiveServiceImpl implements LiveService {
         return eineLive;
     }
 
+    /**
+     * 每30秒获取一次
+     */
     @Scheduled(fixedRate = 30000)
     public void scheduleTask() throws Exception {
         postLiveInfoBySchedule(globalRoomId);
